@@ -2,18 +2,37 @@
 
 class Book
 {
-    private $title;
-    private $author;
+    private $judul;
+    private $penulis;
     private $genre;
-    private $publicationYear;
+    private $tahun;
 
-    public function __construct($title, $author, $genre, $publicationYear)
+    public function __construct($judul, $penulis, $genre, $tahun)
     {
-        $this->title = $title;
-        $this->author = $author;
+        $this->judul = $judul;
+        $this->penulis = $penulis;
         $this->genre = $genre;
-        $this->publicationYear = $publicationYear;
+        $this->tahun = $tahun;
     }
 
-    // Getter dan setter untuk properti buku (jika diperlukan)
+    public function getJudul()
+    {
+        return $this->judul;
+    }
+
+    public function getPenulis()
+    {
+        return $this->penulis;
+    }
+
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+
+    public function getTahun()
+    {
+        return $this->tahun;
+    }
 }
+

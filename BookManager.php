@@ -1,9 +1,4 @@
 <?php
-
-use PDO;
-use Book;
-use Database;
-
 require_once 'Database.php';
 require_once 'Book.php';
 
@@ -14,11 +9,11 @@ class BookManager
         $db = Database::getInstance();
         $conn = $db->getConnection();
 
-        $stmt = $conn->prepare("INSERT INTO books (title, author, genre, publication_year) VALUES (:title, :author, :genre, :publication_year)");
-        $stmt->bindValue(':title', $book->getTitle());
-        $stmt->bindValue(':author', $book->getAuthor());
+        $stmt = $conn->prepare("INSERT INTO books (judul, penulis, genre, tahun) VALUES (:judul, :penulis, :genre, :tahun)");
+        $stmt->bindValue(':judul', $book->getJudul());
+        $stmt->bindValue(':penulis', $book->getPenulis());
         $stmt->bindValue(':genre', $book->getGenre());
-        $stmt->bindValue(':publication_year', $book->getPublicationYear());
+        $stmt->bindValue(':tahun', $book->getTahun());
         $stmt->execute();
     }
 
